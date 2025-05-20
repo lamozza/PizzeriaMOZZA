@@ -11,11 +11,18 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('mozzafondo.png') center/cover no-repeat fixed;
   color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: url('fondocompu.png') center/cover no-repeat fixed;
+}
+
+/* Fuente para elementos específicos */
+.logo-text,
+.navbar a {
+  font-family: "Platypi", serif;
+  font-weight: 700;
 }
 
 header {
@@ -54,7 +61,6 @@ header {
   color: white;
   padding: 10px 15px;
   text-decoration: none;
-  font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
@@ -97,8 +103,12 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Móviles */
+/* Para móviles */
 @media (max-width: 600px) {
+  body {
+    background: url('fondocelu.png') center/cover no-repeat fixed;
+  }
+
   .logo-container {
     justify-content: center;
   }
@@ -145,4 +155,4 @@ footer {
     font-size: 1.1rem;
     padding: 12px 18px;
   }
-    }
+  }
