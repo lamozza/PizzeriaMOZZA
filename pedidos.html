@@ -1,0 +1,107 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Mozza - Pedidos</title>
+  <link rel="stylesheet" href="pedidos.css">
+</head>
+<body>
+
+  <header>
+    <h1>Haz tu pedido</h1>
+    <div class="mode-selector">
+      <button onclick="showSection('local')">Comer en el local</button>
+      <button onclick="showSection('delivery')">Delivery</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Menú para ambos modos -->
+    <section class="menu">
+      <h2>Menú</h2>
+      <div class="menu-item">
+        <h3>Pizza Mozzarella</h3>
+        <p>Mozzarella, tomate, orégano</p>
+        <span>$3000</span>
+        <button onclick="addToCart('Pizza Mozzarella', 3000)">Agregar</button>
+      </div>
+      <div class="menu-item">
+        <h3>Pizza Napolitana</h3>
+        <p>Tomate, ajo, mozzarella, albahaca</p>
+        <span>$3500</span>
+        <button onclick="addToCart('Pizza Napolitana', 3500)">Agregar</button>
+      </div>
+      <!-- Agrega más ítems aquí -->
+    </section>
+
+    <!-- Carrito -->
+    <section class="cart">
+      <h2>Tu pedido</h2>
+      <ul id="cart-list"></ul>
+      <p>Total: $<span id="total">0</span></p>
+    </section>
+
+    <!-- Formulario para delivery -->
+    <section id="delivery-form" class="hidden">
+      <h2>Datos para entrega</h2>
+      <input type="text" id="nombre" placeholder="Tu nombre">
+      <input type="text" id="direccion" placeholder="Dirección de entrega">
+      <input type="text" id="telefono" placeholder="Teléfono">
+    </section>
+
+    <!-- Confirmar -->
+    <button onclick="enviarPedido()">Confirmar pedido</button>
+
+  </main>
+
+  <script>
+    let cart = [];
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById("cart-list");
+      const total = document.getElementById("total");
+      cartList.innerHTML = "";
+      let sum = 0;
+      cart.forEach(p => {
+        const li = document.createElement("li");
+        li.textContent = `${p.item} - $${p.price}`;
+        cartList.appendChild(li);
+        sum += p.price;
+      });
+      total.textContent = sum;
+    }
+
+    function showSection(mode) {
+      const form = document.getElementById("delivery-form");
+      if (mode === "delivery") {
+        form.classList.remove("hidden");
+      } else {
+        form.classList.add("hidden");
+      }
+    }
+
+    function enviarPedido() {
+      let mensaje = "Hola, quiero hacer un pedido:\n";
+      cart.forEach(p => mensaje += `- ${p.item} - $${p.price}\n`);
+      mensaje += `Total: $${cart.reduce((a, b) => a + b.price, 0)}\n`;
+
+      if (!document.getElementById("delivery-form").classList.contains("hidden")) {
+        const nombre = document.getElementById("nombre").value;
+        const direccion = document.getElementById("direccion").value;
+        const telefono = document.getElementById("telefono").value;
+        mensaje += `\nDatos:\nNombre: ${nombre}\nDirección: ${direccion}\nTel: ${telefono}`;
+      }
+
+      const url = `https://wa.me/549XXXXXXXXXX?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+  </html>
