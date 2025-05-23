@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: url('fondopedidos.png') center/cover no-repeat fixed;
+  background: url('fondopedidos.jpg') center/cover no-repeat fixed;
 }
 
 header {
