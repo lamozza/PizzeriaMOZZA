@@ -17,7 +17,8 @@
       <a href="pedidos.html" class="active">Pedidos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-   </div>
+  </div>
+
   <header>
     <h1>Haz tu pedido</h1>
     <div class="mode-selector">
@@ -28,69 +29,23 @@
 
   <main>
     <section class="menu">
-  <h2 style="grid-column: 1 / -1;">Menú</h2>
+      <h2 style="grid-column: 1 / -1;">Menú</h2>
 
-  <div class="menu-item">
-    <h3>Pizza Mozzarella</h3>
-    <p>Mozzarella, tomate, orégano</p>
-    <span>$3000</span>
-    <button onclick="addToCart('Pizza Mozzarella', 3000)">Agregar</button>
-  </div>
+      <!-- Items del menú (puedes agregar más) -->
+      <div class="menu-item"><h3>Pizza Mozzarella</h3><p>Mozzarella, tomate, orégano</p><span>$3000</span><button onclick="addToCart('Pizza Mozzarella', 3000)">Agregar</button></div>
+      <div class="menu-item"><h3>Pizza Napolitana</h3><p>Tomate, ajo, mozzarella, albahaca</p><span>$3500</span><button onclick="addToCart('Pizza Napolitana', 3500)">Agregar</button></div>
+      <div class="menu-item"><h3>Pizza Fugazza</h3><p>Cebolla, mozzarella, orégano</p><span>$3200</span><button onclick="addToCart('Pizza Fugazza', 3200)">Agregar</button></div>
+      <div class="menu-item"><h3>Pizza Calabresa</h3><p>Calabresa, mozzarella, orégano</p><span>$3500</span><button onclick="addToCart('Pizza Calabresa', 3500)">Agregar</button></div>
+      <div class="menu-item"><h3>Pizza Especial</h3><p>Mozzarella, jamón, morrón, huevo, aceitunas</p><span>$4000</span><button onclick="addToCart('Pizza Especial', 4000)">Agregar</button></div>
+    </section>
 
-  <div class="menu-item">
-    <h3>Pizza Napolitana</h3>
-    <p>Tomate, ajo, mozzarella, albahaca</p>
-    <span>$3500</span>
-    <button onclick="addToCart('Pizza Napolitana', 3500)">Agregar</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Pizza Muzzarella</h3>
-    <p>Mozzarella, aceitunas verdes</p>
-    <span>$3000</span>
-    <button onclick="addToCart('Pizza Muzzarella', 3000)">Agregar</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Pizza Fugazza</h3>
-    <p>Cebolla, mozzarella, orégano</p>
-    <span>$3200</span>
-    <button onclick="addToCart('Pizza Fugazza', 3200)">Agregar</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Pizza Calabresa</h3>
-    <p>Calabresa, mozzarella, orégano</p>
-    <span>$3500</span>
-    <button onclick="addToCart('Pizza Calabresa', 3500)">Agregar</button>
-  </div>
-
-  <div class="menu-item">
-    <h3>Pizza Especial</h3>
-    <p>Mozzarella, jamón, morrón, huevo, aceitunas (editable)</p>
-    <span>$4000</span>
-    <button onclick="addToCart('Pizza Especial', 4000)">Agregar</button>
-  </div>
-
-  <!-- Rellena las siguientes con más tipos de pizza -->
-  <div class="menu-item"><h3>Pizza 7</h3><p>Descripción</p><span>$3300</span><button onclick="addToCart('Pizza 7', 3300)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 8</h3><p>Descripción</p><span>$3400</span><button onclick="addToCart('Pizza 8', 3400)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 9</h3><p>Descripción</p><span>$3100</span><button onclick="addToCart('Pizza 9', 3100)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 10</h3><p>Descripción</p><span>$3600</span><button onclick="addToCart('Pizza 10', 3600)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 11</h3><p>Descripción</p><span>$3900</span><button onclick="addToCart('Pizza 11', 3900)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 12</h3><p>Descripción</p><span>$3700</span><button onclick="addToCart('Pizza 12', 3700)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 13</h3><p>Descripción</p><span>$3800</span><button onclick="addToCart('Pizza 13', 3800)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 14</h3><p>Descripción</p><span>$3900</span><button onclick="addToCart('Pizza 14', 3900)">Agregar</button></div>
-  <div class="menu-item"><h3>Pizza 15</h3><p>Descripción</p><span>$3950</span><button onclick="addToCart('Pizza 15', 3950)">Agregar</button></div>
-  </section>
-  <section class="carrito">
-  <h2>Carrito</h2>
-  <ul id="cart-list"></ul>
-  <p>Total: $<span id="cart-total">0</span></p>
-  <button onclick="vaciarCarrito()">Vaciar Carrito</button>
-  </section>
+    <section class="carrito">
+      <h2>Carrito</h2>
+      <ul id="cart-list"></ul>
+      <p>Total: $<span id="cart-total">0</span></p>
+      <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    </section>
   </main>
-  
 
   <section id="delivery-form" class="hidden">
     <h2>Datos para entrega</h2>
@@ -99,7 +54,12 @@
     <input type="text" id="telefono" placeholder="Teléfono">
   </section>
 
-  <button onclick="enviarPedido()">Confirmar pedido</button>
+  <button class="confirmar-btn" onclick="enviarPedido()">Confirmar pedido</button>
+
+  <footer>
+    <div class="footer-checkered"></div>
+    <p>&copy; 2025 La Mozza. Todos los derechos reservados.</p>
+  </footer>
 
   <script>
     let cart = [];
@@ -138,11 +98,18 @@
         btnDelivery.classList.remove("active");
       }
     }
+
     function vaciarCarrito() {
       cart = [];
-      updateCart(); // Esto ya limpia visualmente
-                                                  }
+      updateCart();
+    }
+
     function enviarPedido() {
+      if (cart.length === 0) {
+        alert("Tu carrito está vacío.");
+        return;
+      }
+
       let mensaje = "Hola, quiero hacer un pedido:\n";
       cart.forEach(p => mensaje += `- ${p.item} - $${p.price}\n`);
       mensaje += `Total: $${cart.reduce((a, b) => a + b.price, 0)}\n`;
@@ -151,6 +118,10 @@
         const nombre = document.getElementById("nombre").value;
         const direccion = document.getElementById("direccion").value;
         const telefono = document.getElementById("telefono").value;
+        if (!nombre || !direccion || !telefono) {
+          alert("Por favor completa todos los campos de entrega.");
+          return;
+        }
         mensaje += `\nDatos:\nNombre: ${nombre}\nDirección: ${direccion}\nTel: ${telefono}`;
       }
 
@@ -158,12 +129,7 @@
       window.open(url, "_blank");
     }
 
-    // Inicia con modo "local" seleccionado
-    showSection('local');
+    showSection('local'); // Por defecto
   </script>
-  <footer>
-    <div class="footer-checkered"></div>
-    <p>&copy; 2025 La Mozza. Todos los derechos reservados.</p>
-  </footer>
 </body>
-  </html>
+</html>
