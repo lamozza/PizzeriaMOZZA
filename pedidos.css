@@ -118,3 +118,47 @@ button[onclick="enviarPedido()"] {
     background-color: white;
   }
 }
+/* Contenedor principal para carta + carrito */
+.pedido-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Menú en formato de grilla 3xN en PC */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* Diseño del carrito */
+.carrito {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Diseño adaptable */
+@media screen and (min-width: 768px) {
+  .pedido-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex: 2;
+  }
+
+  .carrito {
+    flex: 1;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  }
