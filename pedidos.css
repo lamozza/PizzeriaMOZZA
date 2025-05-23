@@ -3,6 +3,7 @@ body {
   background-color: #fffaf5;
   color: #333;
   padding: 20px;
+  margin: 0;
 }
 
 header {
@@ -18,9 +19,20 @@ header {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0.7;
 }
 
-.menu {
+.mode-selector button.active {
+  opacity: 1;
+  background-color: #b92014;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu, .cart {
   margin-bottom: 20px;
 }
 
@@ -43,7 +55,6 @@ header {
   background-color: #f3f3f3;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 #delivery-form {
@@ -72,4 +83,16 @@ button[onclick="enviarPedido()"] {
 
 .hidden {
   display: none;
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .menu, .cart {
+    flex: 1;
+  }
 }
