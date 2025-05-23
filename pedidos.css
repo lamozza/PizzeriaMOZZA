@@ -1,3 +1,50 @@
+:root {
+  --rojo-mozza: #d52b1e;
+  --verde-footer: #4CAF50;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center; /* Centramos por defecto */
+}
+
+.logo-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-family: "Platypi", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--rojo-mozza);
+}
+
+/* Si usás navbar también en pedidos */
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.navbar a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-family: "Platypi", serif;
+  font-weight: 700;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fffaf5;
