@@ -7,18 +7,6 @@
   
 </head>
 <body>
- <header>
-    <div class="logo-container">
-      <img src="logoh.png" alt="Logo La Mozza" />
-      <div class="logo-text">LA MOZZA</div>
-    </div>
-    <nav class="navbar">
-      <a href="index.html">HOGAR</a>
-      <a href="pedidos.html">PEDIDOS</a>
-      <a href="#">RESERVACIONES</a>
-      <a href="#">CONTACTO</a>
-    </nav>
-  </header>
   <header>
     <h1>Haz tu pedido</h1>
     <div class="mode-selector">
@@ -112,7 +100,7 @@
 
     function updateCart() {
       const cartList = document.getElementById("cart-list");
-      const total = document.getElementById("total");
+      const total = document.getElementById("cart-total");
       cartList.innerHTML = "";
       let sum = 0;
       cart.forEach(p => {
@@ -139,7 +127,10 @@
         btnDelivery.classList.remove("active");
       }
     }
-
+    function vaciarCarrito() {
+      cart = [];
+      updateCart(); // Esto ya limpia visualmente
+                                                  }
     function enviarPedido() {
       let mensaje = "Hola, quiero hacer un pedido:\n";
       cart.forEach(p => mensaje += `- ${p.item} - $${p.price}\n`);
