@@ -17,26 +17,61 @@
 
   <main>
     <section class="menu">
-      <h2>Menú</h2>
-      <div class="menu-item">
-        <h3>Pizza Mozzarella</h3>
-        <p>Mozzarella, tomate, orégano</p>
-        <span>$3000</span>
-        <button onclick="addToCart('Pizza Mozzarella', 3000)">Agregar</button>
-      </div>
-      <div class="menu-item">
-        <h3>Pizza Napolitana</h3>
-        <p>Tomate, ajo, mozzarella, albahaca</p>
-        <span>$3500</span>
-        <button onclick="addToCart('Pizza Napolitana', 3500)">Agregar</button>
-      </div>
-    </section>
+  <h2 style="grid-column: 1 / -1;">Menú</h2>
 
-    <section class="cart">
-      <h2>Tu pedido</h2>
-      <ul id="cart-list"></ul>
-      <p>Total: $<span id="total">0</span></p>
-    </section>
+  <div class="menu-item">
+    <h3>Pizza Mozzarella</h3>
+    <p>Mozzarella, tomate, orégano</p>
+    <span>$3000</span>
+    <button onclick="addToCart('Pizza Mozzarella', 3000)">Agregar</button>
+  </div>
+
+  <div class="menu-item">
+    <h3>Pizza Napolitana</h3>
+    <p>Tomate, ajo, mozzarella, albahaca</p>
+    <span>$3500</span>
+    <button onclick="addToCart('Pizza Napolitana', 3500)">Agregar</button>
+  </div>
+
+  <div class="menu-item">
+    <h3>Pizza Muzzarella</h3>
+    <p>Mozzarella, aceitunas verdes</p>
+    <span>$3000</span>
+    <button onclick="addToCart('Pizza Muzzarella', 3000)">Agregar</button>
+  </div>
+
+  <div class="menu-item">
+    <h3>Pizza Fugazza</h3>
+    <p>Cebolla, mozzarella, orégano</p>
+    <span>$3200</span>
+    <button onclick="addToCart('Pizza Fugazza', 3200)">Agregar</button>
+  </div>
+
+  <div class="menu-item">
+    <h3>Pizza Calabresa</h3>
+    <p>Calabresa, mozzarella, orégano</p>
+    <span>$3500</span>
+    <button onclick="addToCart('Pizza Calabresa', 3500)">Agregar</button>
+  </div>
+
+  <div class="menu-item">
+    <h3>Pizza Especial</h3>
+    <p>Mozzarella, jamón, morrón, huevo, aceitunas (editable)</p>
+    <span>$4000</span>
+    <button onclick="addToCart('Pizza Especial', 4000)">Agregar</button>
+  </div>
+
+  <!-- Rellena las siguientes con más tipos de pizza -->
+  <div class="menu-item"><h3>Pizza 7</h3><p>Descripción</p><span>$3300</span><button onclick="addToCart('Pizza 7', 3300)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 8</h3><p>Descripción</p><span>$3400</span><button onclick="addToCart('Pizza 8', 3400)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 9</h3><p>Descripción</p><span>$3100</span><button onclick="addToCart('Pizza 9', 3100)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 10</h3><p>Descripción</p><span>$3600</span><button onclick="addToCart('Pizza 10', 3600)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 11</h3><p>Descripción</p><span>$3900</span><button onclick="addToCart('Pizza 11', 3900)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 12</h3><p>Descripción</p><span>$3700</span><button onclick="addToCart('Pizza 12', 3700)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 13</h3><p>Descripción</p><span>$3800</span><button onclick="addToCart('Pizza 13', 3800)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 14</h3><p>Descripción</p><span>$3900</span><button onclick="addToCart('Pizza 14', 3900)">Agregar</button></div>
+  <div class="menu-item"><h3>Pizza 15</h3><p>Descripción</p><span>$3950</span><button onclick="addToCart('Pizza 15', 3950)">Agregar</button></div>
+  </section>
   </main>
 
   <section id="delivery-form" class="hidden">
