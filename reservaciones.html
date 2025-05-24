@@ -23,14 +23,77 @@
   </header>
 
   <main>
-    <h1>La Mozza</h1>
-    <p class="subtitle">PIZZERIA ARTESANAL</p>
-    <p class="subtitle">Donde la emocion esta en cada porción.</p>
+  <section id="reserva-container">
+  <div id="plano-local">
+    <h2>Seleccioná una mesa</h2>
+    <div class="mesas">
+      <!-- Se generan 30 mesas -->
+      <script>
+        for (let i = 1; i <= 30; i++) {
+          document.write(`<div class="mesa" onclick="seleccionarMesa(${i})">Mesa ${i}</div>`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <div id="info-mesa">
+    <h2>Reserva</h2>
+    <p id="mesa-seleccionada">Seleccioná una mesa...</p>
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" onchange="cargarHorarios()" />
+    <div id="horarios"></div>
+    <div id="pedido">
+      <p>¿Querés encargar la pizza?</p>
+      <button onclick="encargarPizza(true)">Encargar ahora</button>
+      <button onclick="encargarPizza(false)">Pedir en el local</button>
+    </div>
+  </div>
+  </section>
   </main>
 
   <footer>
     <div class="footer-checkered"></div>
     <p>&copy; 2025 La Mozza. Todos los derechos reservados.</p>
   </footer>
+  <script>
+  let mesaSeleccionada = null;
+
+  function seleccionarMesa(num) {
+    mesaSeleccionada = num;
+    document.getElementById('mesa-seleccionada').textContent = "Mesa seleccionada: " + num;
+    document.getElementById('horarios').innerHTML = "";
+    document.getElementById('fecha').value = "";
+  }
+
+  function cargarHorarios() {
+    if (!mesaSeleccionada) {
+      alert("Seleccioná una mesa primero.");
+      return;
+    }
+
+    const fecha = document.getElementById('fecha').value;
+    if (!fecha) return;
+
+    const horarios = ["19:00", "20:00", "21:00", "22:00"];
+    let html = "<p>Horarios disponibles:</p><ul>";
+
+    horarios.forEach(h => {
+      html += `<li><label><input type="radio" name="horario" value="${h}" /> ${h}</label></li>`;
+    });
+
+    html += "</ul>";
+    document.getElementById('horarios').innerHTML = html;
+  }
+
+  function encargarPizza(encargar) {
+    if (!mesaSeleccionada || !document.querySelector('input[name="horario"]:checked')) {
+      alert("Seleccioná mesa y horario.");
+      return;
+    }
+
+    const horario = document.querySelector('input[name="horario"]:checked').value;
+    alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
+  }
+  </script>
 </body>
 </html>
