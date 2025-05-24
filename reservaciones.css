@@ -156,3 +156,49 @@ footer {
     padding: 12px 18px;
   }
   }
+
+#reserva-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+#plano-local {
+  text-align: center;
+}
+
+.mesas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.mesa {
+  background-color: rgba(255,255,255,0.2);
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mesa:hover {
+  background-color: var(--rojo-mozza);
+  color: white;
+}
+
+#info-mesa {
+  text-align: center;
+}
+
+#pedido {
+  margin-top: 1rem;
+}
+
+#horarios {
+  margin: 1rem 0;
+}
