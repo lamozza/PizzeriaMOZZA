@@ -25,19 +25,18 @@
   <main>
   <section id="reserva-container">
   <div id="plano-local">
-    <h2>Seleccioná una mesa</h2>
-    <div class="mesas">
-      <!-- Se generan 30 mesas -->
-      <script>
-        for (let i = 1; i <= 30; i++) {
-          document.write(`<div class="mesa" onclick="seleccionarMesa(${i})">Mesa ${i}</div>`);
-        }
-      </script>
+    <h2>Plano del local</h2>
+    <div class="plano">
+      <!-- Aquí van las mesas posicionadas manualmente -->
+      <div class="mesa" style="top: 20px; left: 30px;" onclick="seleccionarMesa(1)">1</div>
+      <div class="mesa" style="top: 20px; left: 100px;" onclick="seleccionarMesa(2)">2</div>
+      <div class="mesa" style="top: 100px; left: 50px;" onclick="seleccionarMesa(3)">3</div>
+      <!-- ...agregá las 30 mesas manualmente con sus posiciones -->
     </div>
   </div>
 
   <div id="info-mesa">
-    <h2>Reserva</h2>
+    <h2>Reservar</h2>
     <p id="mesa-seleccionada">Seleccioná una mesa...</p>
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" onchange="cargarHorarios()" />
