@@ -1,98 +1,97 @@
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Mozza - Pizza</title>
-  <link rel="stylesheet" href="estilos.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Mozza - Pizza</title>
+    <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <header>
+
+<header>
     <div class="logo-container">
-      <img src="logoh.png" alt="Logo La Mozza" />
-      <div class="logo-text">LA MOZZA</div>
+        <img src="logoh.png" alt="Logo La Mozza" />
+        <div class="logo-text">LA MOZZA</div>
     </div>
     <nav class="navbar">
-      <a href="index.html">HOGAR</a>
-      <a href="pedidos.html">PEDIDOS</a>
-      <a href="reservaciones.html">RESERVACIONES</a>
-      <a href="contacto.html">CONTACTO</a>
+        <a href="index.html">HOGAR</a>
+        <a href="pedidos.html">PEDIDOS</a>
+        <a href="reservaciones.html">RESERVACIONES</a>
+        <a href="contacto.html">CONTACTO</a>
     </nav>
-  </header>
+</header>
 
-  <main>
-  <section id="reserva-container">
-  <div id="plano-local">
-    <h2>Plano del local</h2>
-    <div class="plano">
-      <!-- Aquí van las mesas posicionadas manualmente -->
-      <div class="mesa" style="top: 20px; left: 30px;" onclick="seleccionarMesa(1)">1</div>
-      <div class="mesa" style="top: 20px; left: 100px;" onclick="seleccionarMesa(2)">2</div>
-      <div class="mesa" style="top: 100px; left: 50px;" onclick="seleccionarMesa(3)">3</div>
-      <!-- ...agregá las 30 mesas manualmente con sus posiciones -->
-    </div>
-  </div>
+<main>
+    <section id="reserva-container">
+        <div id="plano-local">
+            <h2>Plano del local</h2>
+            <div class="plano">
+                <div class="mesa" style="top: 20px; left: 30px;" onclick="seleccionarMesa(1)">1</div>
+                <div class="mesa" style="top: 20px; left: 100px;" onclick="seleccionarMesa(2)">2</div>
+                <div class="mesa" style="top: 100px; left: 50px;" onclick="seleccionarMesa(3)">3</div>
+                <!-- Agrega las mesas adicionales aquí -->
+            </div>
+        </div>
 
-  <div id="info-mesa">
-    <h2>Reservar</h2>
-    <p id="mesa-seleccionada">Seleccioná una mesa...</p>
-    <label for="fecha">Fecha:</label>
-    <input type="date" id="fecha" onchange="cargarHorarios()" />
-    <div id="horarios"></div>
-    <div id="pedido">
-      <p>¿Querés encargar la pizza?</p>
-      <button onclick="encargarPizza(true)">Encargar ahora</button>
-      <button onclick="encargarPizza(false)">Pedir en el local</button>
-    </div>
-  </div>
-  </section>
-  </main>
+        <div id="info-mesa">
+            <h2>Reservar</h2>
+            <p id="mesa-seleccionada">Seleccioná una mesa...</p>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" onchange="cargarHorarios()" />
+            <div id="horarios"></div>
+            <div id="pedido">
+                <p>¿Querés encargar la pizza?</p>
+                <button onclick="encargarPizza(true)">Encargar ahora</button>
+                <button onclick="encargarPizza(false)">Pedir en el local</button>
+            </div>
+        </div>
+    </section>
+</main>
 
-  <footer>
+<footer>
     <div class="footer-checkered"></div>
     <p>&copy; 2025 La Mozza. Todos los derechos reservados.</p>
-  </footer>
-  <script>
-  let mesaSeleccionada = null;
+</footer>
 
-  function seleccionarMesa(num) {
-    mesaSeleccionada = num;
-    document.getElementById('mesa-seleccionada').textContent = "Mesa seleccionada: " + num;
-    document.getElementById('horarios').innerHTML = "";
-    document.getElementById('fecha').value = "";
-  }
+<script>
+    let mesaSeleccionada = null;
 
-  function cargarHorarios() {
-    if (!mesaSeleccionada) {
-      alert("Seleccioná una mesa primero.");
-      return;
+    function seleccionarMesa(num) {
+        mesaSeleccionada = num;
+        document.getElementById('mesa-seleccionada').textContent = "Mesa seleccionada: " + num;
+        document.getElementById('horarios').innerHTML = "";
+        document.getElementById('fecha').value = "";
     }
 
-    const fecha = document.getElementById('fecha').value;
-    if (!fecha) return;
+    function cargarHorarios() {
+        if (!mesaSeleccionada) {
+            alert("Seleccioná una mesa primero.");
+            return;
+        }
 
-    const horarios = ["19:00", "20:00", "21:00", "22:00"];
-    let html = "<p>Horarios disponibles:</p><ul>";
+        const fecha = document.getElementById('fecha').value;
+        if (!fecha) return;
 
-    horarios.forEach(h => {
-      html += `<li><label><input type="radio" name="horario" value="${h}" /> ${h}</label></li>`;
-    });
+        const horarios = ["19:00", "20:00", "21:00", "22:00"];
+        let html = "<p>Horarios disponibles:</p><ul>";
 
-    html += "</ul>";
-    document.getElementById('horarios').innerHTML = html;
-  }
+        horarios.forEach(h => {
+            html += `<li><label><input type="radio" name="horario" value="${h}" /> ${h}</label></li>`;
+        });
 
-  function encargarPizza(encargar) {
-    if (!mesaSeleccionada || !document.querySelector('input[name="horario"]:checked')) {
-      alert("Seleccioná mesa y horario.");
-      return;
+        html += "</ul>";
+        document.getElementById('horarios').innerHTML = html;
     }
 
-    const horario = document.querySelector('input[name="horario"]:checked').value;
-    alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
-  }
-  </script>
+    function encargarPizza(encargar) {
+        if (!mesaSeleccionada || !document.querySelector('input[name="horario"]:checked')) {
+            alert("Seleccioná mesa y horario.");
+            return;
+        }
+
+        const horario = document.querySelector('input[name="horario"]:checked').value;
+        alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
+    }
+</script>
+
 </body>
 </html>
