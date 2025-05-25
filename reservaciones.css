@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   background: url('fondocompu.png') center/cover no-repeat fixed;
+  text-shadow: 1px 1px 3px #000;
 }
 
 /* Fuente para elementos específicos */
@@ -75,7 +76,6 @@ main {
   text-align: center;
   max-width: 900px;
   margin: auto;
-  text-shadow: 1px 1px 3px #000;
 }
 
 main h1 {
@@ -103,7 +103,7 @@ footer {
   margin-bottom: 10px;
 }
 
-/* Para móviles */
+/* Responsive para móviles */
 @media (max-width: 600px) {
   body {
     background: url('fondocelu.png') center/cover no-repeat fixed;
@@ -124,6 +124,10 @@ footer {
   .navbar a {
     padding: 8px 12px;
     font-size: 0.9rem;
+  }
+
+  #reserva-container {
+    flex-direction: column;
   }
 }
 
@@ -155,68 +159,25 @@ footer {
     font-size: 1.1rem;
     padding: 12px 18px;
   }
-  }
-
-#reserva-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-  color: white;
 }
 
-#plano-local {
-  text-align: center;
-}
-
-.mesas {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 10px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.mesa {
-  background-color: rgba(255,255,255,0.2);
-  border: 2px solid white;
-  border-radius: 8px;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.mesa:hover {
-  background-color: var(--rojo-mozza);
-  color: white;
-}
-
-#info-mesa {
-  text-align: center;
-}
-
-#pedido {
-  margin-top: 1rem;
-}
-
-#horarios {
-  margin: 1rem 0;
-}
 #reserva-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   padding: 2rem;
   justify-content: center;
+  color: white;
 }
 
 #plano-local {
   flex: 1;
+  text-align: center;
   position: relative;
   min-height: 400px;
   max-width: 600px;
   border: 2px dashed white;
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .plano {
@@ -237,9 +198,25 @@ footer {
   cursor: pointer;
   font-weight: bold;
   box-shadow: 1px 1px 3px black;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.mesa:hover {
+  background-color: white;
+  color: var(--rojo-mozza);
+  transform: scale(1.1);
 }
 
 #info-mesa {
   flex: 1;
   max-width: 400px;
+  text-align: left;
 }
+
+#horarios {
+  margin: 1rem 0;
+}
+
+#pedido {
+  margin-top: 1rem;
+  }
