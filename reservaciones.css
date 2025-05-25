@@ -164,10 +164,13 @@ footer {
 #reserva-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
+  flex-wrap: wrap;
   padding: 2rem;
-  justify-content: center;
   color: white;
+}
 }
 
 #plano-local {
@@ -220,14 +223,6 @@ footer {
 #pedido {
   margin-top: 1rem;
   }
-#reserva-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
 
 /* Opcional para mejor proporción visual */
 #plano-local {
