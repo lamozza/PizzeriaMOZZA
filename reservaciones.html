@@ -38,11 +38,13 @@
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" onchange="cargarHorarios()" />
             <div id="horarios"></div>
-            <div id="pedido" style="display: flex; justify-content: center; gap: 10px;">
+            <div id="pedido" style="display: flex; flex-direction: column; align-items: center; margin-top: 1.5rem;">
                 <p>¿Querés encargar la pizza?</p>
+                <div style="display: flex; gap: 10px;">
                 <button onclick="encargarPizza(true)">Encargar ahora</button>
                 <button onclick="encargarPizza(false)">Pedir en el local</button>
-            </div>
+                </div>
+             </div>
         </div>
     </section>
 
