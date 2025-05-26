@@ -38,7 +38,7 @@
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" onchange="cargarHorarios()" />
             <div id="horarios"></div>
-            <div id="pedido">
+            <div id="pedido" style="display: flex; justify-content: center; gap: 10px;">
                 <p>¿Querés encargar la pizza?</p>
                 <button onclick="encargarPizza(true)">Encargar ahora</button>
                 <button onclick="encargarPizza(false)">Pedir en el local</button>
@@ -47,7 +47,7 @@
     </section>
 
     <!-- Contenedor para el menú de pizzas -->
-    <div id="menu-pizzas" style="display: none;">
+    <div id="menu-pizzas" style="display: none; position: absolute; top: 0; right: 0;">
         <h2>Menú de Pizzas</h2>
         <div id="contenido-menu"></div>
         <div id="botones-pago" style="display: none;">
@@ -99,10 +99,12 @@
         }
 
         const horario = document.querySelector('input[name="horario"]:checked').value;
-        alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
 
         // Mostrar el menú de pizzas
         document.getElementById('menu-pizzas').style.display = 'block';
+
+        // Mostrar el mensaje de reserva confirmada después de cargar el menú
+        alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
 
         // Cargar el menú de pizzas
         fetch('https://lamozza.github.io/PizzeriaMOZZA/pedidos.html')
