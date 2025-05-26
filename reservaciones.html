@@ -45,6 +45,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Contenedor para el menú de pizzas -->
+    <div id="menu-pizzas" style="display: none;">
+        <h2>Menú de Pizzas</h2>
+        <div id="contenido-menu"></div>
+        <div id="botones-pago" style="display: none;">
+            <button id="pagar-ahora">Pagar ahora</button>
+            <button id="pagar-local">Pagar en el local</button>
+        </div>
+    </div>
 </main>
 
 <footer>
@@ -92,36 +102,6 @@
         alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
 
         // Mostrar el menú de pizzas
-        document.getElementById('menu-pizzas').style.display = 'block';
-        // Cargar el menú de pizzas
-        fetch('https://lamozza.github.io/PizzeriaMOZZA/pedidos.html')
-            .then(response => response.text())
-            .then(data => {
-                // Crear un contenedor temporal para el HTML
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = data;
-                // Extraer el contenido del menú de pizzas
-                const menuContent = tempDiv.querySelector('#contenido-menu'); // Asegúrate de que el ID sea correcto
-                document.getElementById('contenido-menu').innerHTML = menuContent.innerHTML;
-                // Mostrar los botones de pago
-                document.getElementById('botones-pago').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error al cargar el menú de pizzas:', error);
-                alert('No se pudo cargar el menú de pizzas. Intenta nuevamente más tarde.');
-            });
-    }
-</script>
-
-</body>
-</html>
-
-
-
-
-
-
- // Mostrar el menú de pizzas
         document.getElementById('menu-pizzas').style.display = 'block';
 
         // Cargar el menú de pizzas
