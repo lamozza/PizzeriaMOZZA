@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>La Mozza - Reservaciones</title>
-    <link rel="stylesheet" href="reservaciones.css" />
+    <title>La Mozza - Pizza</title>
+    <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
 
@@ -45,6 +46,15 @@
             </div>
         </div>
     </section>
+
+    <div id="menu-pizzas" style="display: none;">
+        <h2>Menú de Pizzas</h2>
+        <div id="contenido-menu"></div>
+        <div id="botones-pago" style="display: none;">
+            <button id="pagar-ahora">Pagar ahora</button>
+            <button id="pagar-local">Pagar en el local</button>
+        </div>
+    </div>
 </main>
 
 <footer>
@@ -93,18 +103,29 @@
 
         // Mostrar el menú de pizzas
         document.getElementById('menu-pizzas').style.display = 'block';
+
         // Cargar el menú de pizzas
         fetch('https://lamozza.github.io/PizzeriaMOZZA/pedidos.html')
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
             .then(data => {
                 // Crear un contenedor temporal para el HTML
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = data;
+
                 // Extraer el contenido del menú de pizzas
-                const menuContent = tempDiv.querySelector('#contenido-menu'); // Asegúrate de que el ID sea correcto
-                document.getElementById('contenido-menu').innerHTML = menuContent.innerHTML;
-                // Mostrar los botones de pago
-                document.getElementById('botones-pago').style.display = 'block';
+                const menuContent = tempDiv.querySelector('.menu'); // Cambiado a '.menu'
+                if (menuContent) {
+                    document.getElementById('contenido-menu').innerHTML = menuContent.innerHTML;
+                    // Mostrar los botones de pago
+                    document.getElementById('botones-pago').style.display = 'block';
+                } else {
+                    alert('No se encontró el contenido del menú de pizzas.');
+                }
             })
             .catch(error => {
                 console.error('Error al cargar el menú de pizzas:', error);
