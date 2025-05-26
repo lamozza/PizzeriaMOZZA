@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -25,6 +26,7 @@
         <div id="plano-local">
             <h2>Plano del local</h2>
             <div class="plano">
+                <img src="plano.jpg" alt="Plano del local" style="width: 500px; height: 500px;" />
                 <div class="mesa" style="top: 20px; left: 30px;" onclick="seleccionarMesa(1)">1</div>
                 <div class="mesa" style="top: 20px; left: 100px;" onclick="seleccionarMesa(2)">2</div>
                 <div class="mesa" style="top: 100px; left: 50px;" onclick="seleccionarMesa(3)">3</div>
@@ -35,23 +37,29 @@
         <div id="info-mesa">
             <h2>Reservar</h2>
             <p id="mesa-seleccionada">Seleccioná una mesa...</p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required />
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" onchange="cargarHorarios()" />
             <div id="horarios"></div>
             <div id="pedido" style="display: flex; flex-direction: column; align-items: center; margin-top: 1.5rem;">
                 <p>¿Querés encargar la pizza?</p>
                 <div style="display: flex; gap: 10px;">
-                <button onclick="encargarPizza(true)">Encargar ahora</button>
-                <button onclick="encargarPizza(false)">Pedir en el local</button>
+                    <button onclick="encargarPizza(true)">Encargar ahora</button>
+                    <button onclick="encargarPizza(false)">Pedir en el local</button>
                 </div>
-             </div>
+            </div>
         </div>
     </section>
 
     <!-- Contenedor para el menú de pizzas -->
-    <div id="menu-pizzas" style="display: none; position: absolute; top: 0; right: 0;">
+    <div id="menu-pizzas" style="display: none;">
         <h2>Menú de Pizzas</h2>
         <div id="contenido-menu"></div>
+        <div id="carrito">
+            <h3>Se pedirá:</h3>
+            <ul id="lista-pizzas"></ul>
+        </div>
         <div id="botones-pago" style="display: none;">
             <button id="pagar-ahora">Pagar ahora</button>
             <button id="pagar-local">Pagar en el local</button>
@@ -66,6 +74,7 @@
 
 <script>
     let mesaSeleccionada = null;
+    let pizzasSeleccionadas = [];
 
     function seleccionarMesa(num) {
         mesaSeleccionada = num;
@@ -105,9 +114,6 @@
         // Mostrar el menú de pizzas
         document.getElementById('menu-pizzas').style.display = 'block';
 
-        // Mostrar el mensaje de reserva confirmada después de cargar el menú
-        alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
-
         // Cargar el menú de pizzas
         fetch('https://lamozza.github.io/PizzeriaMOZZA/pedidos.html')
             .then(response => {
@@ -117,15 +123,12 @@
                 return response.text();
             })
             .then(data => {
-                // Crear un contenedor temporal para el HTML
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = data;
 
-                // Extraer el contenido del menú de pizzas
-                const menuContent = tempDiv.querySelector('.menu'); // Cambiado a '.menu'
+                const menuContent = tempDiv.querySelector('.menu');
                 if (menuContent) {
                     document.getElementById('contenido-menu').innerHTML = menuContent.innerHTML;
-                    // Mostrar los botones de pago
                     document.getElementById('botones-pago').style.display = 'block';
                 } else {
                     alert('No se encontró el contenido del menú de pizzas.');
@@ -135,6 +138,24 @@
                 console.error('Error al cargar el menú de pizzas:', error);
                 alert('No se pudo cargar el menú de pizzas. Intenta nuevamente más tarde.');
             });
+
+        // Mostrar el mensaje de reserva confirmada después de cargar el menú
+        alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
+    }
+
+    function agregarPizza(nombrePizza) {
+        pizzasSeleccionadas.push(nombrePizza);
+        actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+        const listaPizzas = document.getElementById('lista-pizzas');
+        listaPizzas.innerHTML = '';
+        pizzasSeleccionadas.forEach(pizza => {
+            const li = document.createElement('li');
+            li.textContent = pizza;
+            listaPizzas.appendChild(li);
+        });
     }
 </script>
 
