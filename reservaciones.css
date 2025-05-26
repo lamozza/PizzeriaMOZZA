@@ -1,6 +1,7 @@
 :root {
     --rojo-mozza: #d52b1e;
     --verde-footer: #4CAF50;
+    --blanco: #fff; /* Agregado desde pedidos.css */
 }
 
 * {
@@ -19,34 +20,33 @@ body {
     text-shadow: 1px 1px 3px #000;
 }
 
-.logo-text,
-.navbar a {
-    font-family: "Platypi", serif;
-    font-weight: 700;
-}
-
-header {
-    background-color: rgba(213, 43, 30, 0.95);
-    padding: 1rem 2rem;
+.encabezado {
+    background-color: rgba(213, 43, 30, 0.9);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.logo-container img {
-    width: 40px;
-    height: 40px;
+.logo-img {
+    height: 60px;
+    margin-right: 10px;
 }
 
 .logo-text {
-    font-size: 2rem;
+    font-size: 28px;
     font-weight: bold;
+    color: white;
 }
 
 .navbar {
@@ -69,12 +69,99 @@ header {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.titulo-principal {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.mode-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mode-selector button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #c0392b;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.mode-selector .active {
+    background-color: #922b21;
+}
+
 main {
     flex-grow: 1;
     padding: 3rem 1.5rem;
     max-width: 1100px;
     margin: auto;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    flex: 2;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+.menu-item button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.carrito {
+    flex: 1;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+#delivery-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.confirmar-btn {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 footer {
@@ -255,4 +342,3 @@ footer {
         justify-content: flex-end;
     }
 }
-
