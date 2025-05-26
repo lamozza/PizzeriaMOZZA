@@ -237,3 +237,22 @@ footer {
         margin-top: 2rem;
     }
 }
+
+/* Corrección para header en pantallas grandes */
+@media (min-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-container {
+        justify-content: flex-start;
+    }
+
+    .navbar {
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+}
+
