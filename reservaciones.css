@@ -298,3 +298,10 @@ footer {
         justify-content: flex-end;
     }
 }
+#menu-pizzas {
+    display: none; 
+    position: absolute; 
+    top: 100px; /* Ajusta este valor según sea necesario */
+    right: 0;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
