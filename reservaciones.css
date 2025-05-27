@@ -2,16 +2,14 @@
     --rojo-mozza: #d52b1e;
     --verde-footer: #4CAF50;
 }
-&nbsp;
-&nbsp;
+
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-&nbsp;
-&nbsp;
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,16 +20,14 @@ body {
     background: url('reservaciones.png') center/cover no-repeat fixed;
     text-shadow: 1px 1px 3px #000;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-text,
 .navbar a {
     font-family: "Platypi", serif;
     font-weight: 700;
 }
-&nbsp;
-&nbsp;
+
 
 header {
     background-color: rgba(213, 43, 30, 0.95);
@@ -40,30 +36,26 @@ header {
     flex-direction: column;
     align-items: center;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-container img {
     width: 40px;
     height: 40px;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-text {
     font-size: 2rem;
     font-weight: bold;
 }
-&nbsp;
-&nbsp;
+
 
 .navbar {
     display: flex;
@@ -72,8 +64,7 @@ header {
     gap: 10px;
     margin-top: 10px;
 }
-&nbsp;
-&nbsp;
+
 
 .navbar a {
     color: white;
@@ -82,14 +73,12 @@ header {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-&nbsp;
-&nbsp;
+
 
 .navbar a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-&nbsp;
-&nbsp;
+
 
 main {
     flex-grow: 1;
@@ -98,8 +87,7 @@ main {
     margin: auto;
     color: white;
 }
-&nbsp;
-&nbsp;
+
 
 .menu {
     display: grid;
@@ -110,8 +98,6 @@ main {
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
 }
-&nbsp;
-&nbsp;
 
 .menu-item {
     border: 1px solid #ccc;
@@ -120,8 +106,7 @@ main {
     background: #fff;
     text-align: center;
 }
-&nbsp;
-&nbsp;
+
 
 .menu-item button {
     margin-top: 10px;
@@ -132,8 +117,7 @@ main {
     border-radius: 6px;
     cursor: pointer;
 }
-&nbsp;
-&nbsp;
+
 
 footer {
     background-color: var(--verde-footer);
@@ -141,8 +125,7 @@ footer {
     text-align: center;
     color: white;
 }
-&nbsp;
-&nbsp;
+
 
 .footer-checkered {
     display: block;
@@ -151,8 +134,7 @@ footer {
     height: 20px;
     margin-bottom: 10px;
 }
-&nbsp;
-&nbsp;
+
 
 /* Contenedor dividido en dos columnas */
 #reserva-container {
@@ -163,8 +145,7 @@ footer {
     justify-content: space-between;
     flex-wrap: nowrap;
 }
-&nbsp;
-&nbsp;
+
 
 #plano-local {
     flex: 1 1 60%;
@@ -176,22 +157,18 @@ footer {
     min-height: 400px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
-&nbsp;
-&nbsp;
+
 
 #plano-local h2 {
     margin-bottom: 1rem;
 }
-&nbsp;
-&nbsp;
 
 .plano {
     position: relative;
     width: 100%;
     height: 100%;
 }
-&nbsp;
-&nbsp;
+
 
 .mesa {
     position: absolute;
@@ -208,16 +185,13 @@ footer {
     transition: background-color 0.3s, transform 0.2s;
     user-select: none;
 }
-&nbsp;
-&nbsp;
+
 
 .mesa:hover {
     background-color: white;
     color: var(--rojo-mozza);
     transform: scale(1.1);
 }
-&nbsp;
-&nbsp;
 
 #info-mesa {
     flex: 1 1 35%;
@@ -228,8 +202,6 @@ footer {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(213, 43, 30, 0.6);
 }
-&nbsp;
-&nbsp;
 
 #info-mesa h2 {
     margin-bottom: 1rem;
@@ -237,8 +209,7 @@ footer {
     font-size: 1.8rem;
     text-align: center;
 }
-&nbsp;
-&nbsp;
+
 
 #info-mesa p,
 #info-mesa label {
@@ -246,8 +217,7 @@ footer {
     margin-bottom: 0.5rem;
     display: block;
 }
-&nbsp;
-&nbsp;
+
 
 #info-mesa input[type="date"],
 #info-mesa input[type="text"] {
@@ -258,42 +228,35 @@ footer {
     margin-bottom: 1rem;
     font-size: 1rem;
 }
-&nbsp;
-&nbsp;
+
 
 #horarios p {
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
-&nbsp;
-&nbsp;
+
 
 #horarios ul {
     list-style: none;
     padding-left: 0;
 }
-&nbsp;
-&nbsp;
+
 
 #horarios li {
     margin-bottom: 0.5rem;
 }
-&nbsp;
-&nbsp;
+
 
 #pedido {
     margin-top: 1.5rem;
     text-align: center;
 }
-&nbsp;
-&nbsp;
+
 
 #pedido p {
     margin-bottom: 1rem;
     font-weight: 600;
 }
-&nbsp;
-&nbsp;
 
 #pedido button {
     background-color: white;
@@ -306,15 +269,13 @@ footer {
     font-weight: 700;
     transition: background-color 0.3s, color 0.3s;
 }
-&nbsp;
-&nbsp;
+
 
 #pedido button:hover {
     background-color: var(--rojo-mozza);
     color: white;
 }
-&nbsp;
-&nbsp;
+
 
 /* Estilo de botones de pago */
 #botones-pago button {
@@ -328,15 +289,13 @@ footer {
     font-weight: 700;
     transition: background-color 0.3s, color 0.3s;
 }
-&nbsp;
-&nbsp;
+
 
 #botones-pago button:hover {
     background-color: var(--rojo-mozza);
     color: white;
 }
-&nbsp;
-&nbsp;
+
 
 /* Responsive móvil */
 @media (max-width: 750px) {
@@ -344,8 +303,7 @@ footer {
         flex-direction: column;
         padding: 0 1rem;
     }
-&nbsp;
-&nbsp;
+
 
     #plano-local,
     #info-mesa {
@@ -353,21 +311,18 @@ footer {
         flex: none;
         min-height: auto;
     }
-&nbsp;
-&nbsp;
+
 
     #info-mesa {
         margin-top: 2rem;
     }
-&nbsp;
-&nbsp;
+
 
     .menu {
         grid-template-columns: 1fr; /* Una columna en móvil */
     }
 }
-&nbsp;
-&nbsp;
+
 
 /* Corrección para header en pantallas grandes */
 @media (min-width: 900px) {
@@ -376,14 +331,12 @@ footer {
         justify-content: space-between;
         align-items: center;
     }
-&nbsp;
-&nbsp;
+
 
     .logo-container {
         justify-content: flex-start;
     }
-&nbsp;
-&nbsp;
+
 
     .navbar {
         margin-top: 0;
