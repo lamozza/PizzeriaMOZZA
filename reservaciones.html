@@ -142,7 +142,20 @@
         } else {
             // Solo mostrar la ventana emergente de pedido realizado
             alert(`Pedido realizado para Mesa ${mesaSeleccionada} a las ${horario}.`);
+            resetearDatos(); // Llamar a la función para resetear datos
         }
+    }
+
+    function resetearDatos() {
+        mesaSeleccionada = null;
+        pizzasSeleccionadas = [];
+        document.getElementById('mesa-seleccionada').textContent = "Seleccioná una mesa...";
+        document.getElementById('horarios').innerHTML = "";
+        document.getElementById('fecha').value = "";
+        document.getElementById('contenido-menu').innerHTML = "";
+        document.getElementById('lista-pizzas').innerHTML = "";
+        document.getElementById('menu-pizzas').style.display = 'none';
+        document.getElementById('botones-pago').style.display = 'none';
     }
 
     function agregarPizza(nombrePizza) {
