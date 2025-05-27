@@ -60,6 +60,9 @@ header {
 .titulo-principal {
   text-align: center;
   margin: 20px 0;
+  background-color: var(--blanco);
+  padding: 10px;
+  border-radius: 6px;
 }
 
 .menu {
@@ -67,6 +70,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
+  justify-content: center; /* Centrar el contenido */
 }
 
 .menu-item {
@@ -83,6 +87,7 @@ header {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
+  text-align: center; /* Centrar el contenido */
 }
 
 .confirmar-btn {
