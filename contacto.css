@@ -4,77 +4,47 @@ body {
   padding: 0;
   background-color: #f8f8f8;
 }
-&nbsp;
-&nbsp;
-
 header {
   background-color: #ffcc00;
   padding: 20px;
   text-align: center;
 }
-&nbsp;
-&nbsp;
-
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-&nbsp;
-&nbsp;
-
 .logo-container img {
   height: 50px;
   margin-right: 10px;
 }
-&nbsp;
-&nbsp;
-
 .navbar {
   margin-top: 10px;
 }
-&nbsp;
-&nbsp;
-
 .navbar a {
   margin: 0 15px;
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
-&nbsp;
-&nbsp;
-
 main {
   padding: 20px;
   text-align: center;
 }
-&nbsp;
-&nbsp;
-
 h1 {
   font-size: 2.5em;
   color: #333;
 }
-&nbsp;
-&nbsp;
-
 .subtitle {
   font-size: 1.5em;
   color: #666;
 }
-&nbsp;
-&nbsp;
-
 footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 10px 0;
 }
-&nbsp;
-&nbsp;
-
 .footer-checkered {
   height: 5px;
   background: url('contacto.jpg') repeat-x;
