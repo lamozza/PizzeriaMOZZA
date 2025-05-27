@@ -1,158 +1,81 @@
-:root {
-  --rojo-mozza: #d52b1e;
-  --verde-footer: #4CAF50;
-}
-
-* {
-  box-sizing: border-box;
+body {
+  font-family: 'Platypi', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f8f8f8;
 }
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: url('fondocompu.png') center/cover no-repeat fixed;
-}
-
-/* Fuente para elementos específicos */
-.logo-text,
-.navbar a {
-  font-family: "Platypi", serif;
-  font-weight: 700;
-}
+&nbsp;
+&nbsp;
 
 header {
-  background-color: rgba(213, 43, 30, 0.95);
-  padding: 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #ffcc00;
+  padding: 20px;
+  text-align: center;
 }
+&nbsp;
+&nbsp;
 
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
+&nbsp;
+&nbsp;
 
 .logo-container img {
-  width: 40px;
-  height: 40px;
+  height: 50px;
+  margin-right: 10px;
 }
-
-.logo-text {
-  font-size: 2rem;
-  font-weight: bold;
-}
+&nbsp;
+&nbsp;
 
 .navbar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
   margin-top: 10px;
 }
+&nbsp;
+&nbsp;
 
 .navbar a {
-  color: white;
-  padding: 10px 15px;
+  margin: 0 15px;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  color: #333;
+  font-weight: bold;
 }
-
-.navbar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
+&nbsp;
+&nbsp;
 
 main {
-  flex-grow: 1;
-  padding: 3rem 1.5rem;
+  padding: 20px;
   text-align: center;
-  max-width: 900px;
-  margin: auto;
-  text-shadow: 1px 1px 3px #000;
 }
+&nbsp;
+&nbsp;
 
-main h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+h1 {
+  font-size: 2.5em;
+  color: #333;
 }
+&nbsp;
+&nbsp;
 
 .subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #666;
 }
+&nbsp;
+&nbsp;
 
 footer {
-  background-color: var(--verde-footer);
-  padding: 1rem;
-  text-align: center;
+  background-color: #333;
   color: white;
+  text-align: center;
+  padding: 10px 0;
 }
+&nbsp;
+&nbsp;
 
 .footer-checkered {
-  display: block;
-  width: 100%;
-  background: url('esto.jpg') repeat;
-  height: 20px;
-  margin-bottom: 10px;
+  height: 5px;
+  background: url('contacto.jpg') repeat-x;
 }
-
-/* Para móviles */
-@media (max-width: 600px) {
-  body {
-    background: url('fondocelu.png') center/cover no-repeat fixed;
-  }
-
-  .logo-container {
-    justify-content: center;
-  }
-
-  main h1 {
-    font-size: 1.8rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .navbar a {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-}
-
-/* Escritorio */
-@media (min-width: 900px) {
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .logo-container {
-    justify-content: flex-start;
-  }
-
-  .navbar {
-    margin-top: 0;
-  }
-
-  main h1 {
-    font-size: 2.8rem;
-  }
-
-  .subtitle {
-    font-size: 1.4rem;
-  }
-
-  .navbar a {
-    font-size: 1.1rem;
-    padding: 12px 18px;
-  }
-  }
