@@ -1,85 +1,113 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
+:root {
+  --rojo-mozza: #d52b1e;
+  --verde-footer: #4CAF50;
+  --blanco: #fff;
 }
 
+body {
+  background: url('contacto.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Platypi', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  padding-top: 90px;
+}
 
 header {
-    background-color: #d52b1e;
-    padding: 1rem;
-    text-align: center;
+  background-color: rgba(213, 43, 30, 0.9);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-
 
 .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
 
 .nav-bar a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.nav-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
 
 .titulo-principal {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
-
 .menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .menu-item {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
 }
 
 .carrito {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
-
 
 .confirmar-btn {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #d52b1e;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #d52b1e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
 
 .confirmar-btn:hover {
-    background-color: #b51e1a;
+  background-color: #b51e1a;
 }
 
-
 .footer-checkered {
-    height: 20px;
-    background: url('esto.jpg') repeat;
+  height: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #c0392b,
+    #c0392b 10px,
+    white 10px,
+    white 20px
+  );
+  margin-bottom: 10px;
 }
