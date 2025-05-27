@@ -1,59 +1,85 @@
 body {
-  font-family: 'Platypi', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-}
-header {
-  background-color: #ffcc00;
-  padding: 20px;
-  text-align: center;
-}
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.logo-container img {
-  height: 50px;
-  margin-right: 10px;
-}
-.navbar {
-  margin-top: 10px;
-}
-.navbar a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-main {
-  padding: 20px;
-  text-align: center;
-}
-h1 {
-  font-size: 2.5em;
-  color: #333;
-}
-.subtitle {
-  font-size: 1.5em;
-  color: #666;
-}
-footer {
-  background: #f8f8f8;
-  padding: 15px;
-  text-align: center;
-  border-top: 2px solid #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
 }
 
+
+header {
+    background-color: #d52b1e;
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.nav-bar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+
+.titulo-principal {
+    text-align: center;
+    margin: 20px 0;
+}
+
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.carrito {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.confirmar-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #d52b1e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.confirmar-btn:hover {
+    background-color: #b51e1a;
+}
+
+
 .footer-checkered {
-  height: 10px;
-  background: repeating-linear-gradient(
-    45deg,
-    #c0392b,
-    #c0392b 10px,
-    white 10px,
-    white 20px
-  );
-  margin-bottom: 10px;
-  }
+    height: 20px;
+    background: url('esto.jpg') repeat;
+}
