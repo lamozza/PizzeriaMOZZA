@@ -3,8 +3,7 @@
   --verde-footer: #4CAF50;
   --blanco: #fff;
 }
-&nbsp;
-&nbsp;
+
 
 body {
   background: url('contacto.jpg') no-repeat center center fixed;
@@ -14,8 +13,7 @@ body {
   padding: 0;
   color: #333;
 }
-&nbsp;
-&nbsp;
+
 
 header {
   background-color: rgba(213, 43, 30, 0.9);
@@ -28,23 +26,20 @@ header {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-&nbsp;
-&nbsp;
+
 
 .logo-img {
   width: 50px;
   height: 50px;
 }
-&nbsp;
-&nbsp;
+
 
 .nav-bar {
   display: flex;
@@ -53,8 +48,6 @@ header {
   gap: 10px;
   margin-top: 10px;
 }
-&nbsp;
-&nbsp;
 
 .nav-bar a {
   text-decoration: none;
@@ -64,21 +57,17 @@ header {
   border-radius: 6px;
   transition: background-color 0.3s, color 0.3s;
 }
-&nbsp;
-&nbsp;
+
 
 .nav-bar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
-&nbsp;
-&nbsp;
+
 
 main {
   text-align: center; /* Centrar el texto en el main */
   padding: 120px 20px 20px; /* Espacio superior para el encabezado */
 }
-&nbsp;
-&nbsp;
 
 h1, h2, p {
   background-color: var(--blanco); /* Fondo blanco para los textos */
@@ -86,16 +75,13 @@ h1, h2, p {
   border-radius: 6px;
   margin: 10px 0; /* Espaciado entre elementos */
 }
-&nbsp;
-&nbsp;
+
 
 footer {
   background-color: var(--blanco); /* Fondo blanco para el footer */
   text-align: center;
   padding: 15px;
 }
-&nbsp;
-&nbsp;
 
 .footer-checkered {
   height: 20px;
