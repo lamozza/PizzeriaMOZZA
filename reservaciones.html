@@ -104,14 +104,15 @@
     }
 
     function encargarPizza(encargar) {
-        if (!mesaSeleccionada || !document.querySelector('input[name="horario"]:checked')) {
-            alert("Seleccioná mesa y horario.");
-            return;
-        }
+    if (!mesaSeleccionada || !document.querySelector('input[name="horario"]:checked')) {
+        alert("Seleccioná mesa y horario.");
+        return;
+    }
 
-        const horario = document.querySelector('input[name="horario"]:checked').value;
+    const horario = document.querySelector('input[name="horario"]:checked').value;
 
-        // Mostrar el menú de pizzas
+    if (encargar) {
+        // Mostrar el menú de pizzas solo si se elige encargar
         document.getElementById('menu-pizzas').style.display = 'block';
 
         // Cargar el menú de pizzas
@@ -138,6 +139,13 @@
                 console.error('Error al cargar el menú de pizzas:', error);
                 alert('No se pudo cargar el menú de pizzas. Intenta nuevamente más tarde.');
             });
+
+    } else {
+        // Solo mostrar la ventana emergente de pedido realizado
+        alert(`Pedido realizado para Mesa ${mesaSeleccionada} a las ${horario}.`);
+    }
+}
+
 
         // Mostrar el mensaje de reserva confirmada después de cargar el menú
         alert(`Reserva confirmada para Mesa ${mesaSeleccionada} a las ${horario}. Pizza: ${encargar ? "encargada" : "se pedirá en el local"}`);
