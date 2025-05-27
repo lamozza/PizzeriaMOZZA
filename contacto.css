@@ -3,6 +3,8 @@
   --verde-footer: #4CAF50;
   --blanco: #fff;
 }
+&nbsp;
+&nbsp;
 
 body {
   background: url('contacto.jpg') no-repeat center center fixed;
@@ -11,30 +13,38 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  padding-top: 90px;
 }
+&nbsp;
+&nbsp;
 
 header {
   background-color: rgba(213, 43, 30, 0.9);
   position: fixed;
   top: 0;
   width: 100%;
+  height: 100px; /* Altura del encabezado */
   z-index: 1000;
   padding: 10px 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
+&nbsp;
+&nbsp;
 
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+&nbsp;
+&nbsp;
 
 .logo-img {
   width: 50px;
   height: 50px;
 }
+&nbsp;
+&nbsp;
 
 .nav-bar {
   display: flex;
@@ -43,6 +53,8 @@ header {
   gap: 10px;
   margin-top: 10px;
 }
+&nbsp;
+&nbsp;
 
 .nav-bar a {
   text-decoration: none;
@@ -52,58 +64,38 @@ header {
   border-radius: 6px;
   transition: background-color 0.3s, color 0.3s;
 }
+&nbsp;
+&nbsp;
 
 .nav-bar a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+&nbsp;
+&nbsp;
 
-.titulo-principal {
-  text-align: center;
-  margin: 20px 0;
-  background-color: var(--blanco);
+main {
+  text-align: center; /* Centrar el texto en el main */
+  padding: 120px 20px 20px; /* Espacio superior para el encabezado */
+}
+&nbsp;
+&nbsp;
+
+h1, h2, p {
+  background-color: var(--blanco); /* Fondo blanco para los textos */
   padding: 10px;
   border-radius: 6px;
+  margin: 10px 0; /* Espaciado entre elementos */
 }
+&nbsp;
+&nbsp;
 
-.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-content: center; /* Centrar el contenido */
-}
-
-.menu-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 10px;
-  background: #fff;
+footer {
+  background-color: var(--blanco); /* Fondo blanco para el footer */
   text-align: center;
+  padding: 15px;
 }
-
-.carrito {
-  margin: 20px;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: center; /* Centrar el contenido */
-}
-
-.confirmar-btn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #d52b1e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.confirmar-btn:hover {
-  background-color: #b51e1a;
-}
+&nbsp;
+&nbsp;
 
 .footer-checkered {
   height: 20px;
